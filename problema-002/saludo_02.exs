@@ -1,7 +1,7 @@
 defmodule SaludoBienvenida do
   def main do
     "ingrese el nombre del empleado :"
-    |> Util.ingresar(mensaje,:texto)
+    |> Util.ingresar()
     |> saludo_con_nombre()
     |> Util.mostrar_mensaje()
   end
