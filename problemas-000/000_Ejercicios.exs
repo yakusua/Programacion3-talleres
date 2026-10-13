@@ -1,8 +1,6 @@
 defmodule Ejercicio000 do
   def main do
-
-
-
+      ## :) escoje el que quieras
   end
 
   #punto 1

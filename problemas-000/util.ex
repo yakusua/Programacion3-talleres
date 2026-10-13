@@ -43,6 +43,19 @@ defmodule Util do
         |> ingresar(:real)
     end
   end
+  def ingresar(mensaje, :booleando) do
+    valor = mensaje
+      |> IO.gets()
+      |> String.trim()
+      |> String.downcase()
+      |> String.to_atom()
+
+    if valor == "true" do
+      true
+    else
+      false
+    end
+  end
 
 
   def mostrar_mensaje(mensaje) do

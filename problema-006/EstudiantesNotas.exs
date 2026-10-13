@@ -1,7 +1,13 @@
 
 defmodule EstudiantesNotas do
   def main do
-    lista_notas = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+    lista = [
+      %{nombre: "Ana", nota: 4},
+      %{nombre: "Luis", nota: 2},
+      %{nombre: "María", nota: 5},
+      %{nombre: "Pedro", nota: 1},
+      %{nombre: "Sofía", nota: 3}
+    ]
 
     prom = promedio(lista_notas)
 
@@ -18,7 +24,9 @@ defmodule EstudiantesNotas do
   end
 
   defp promedio([]), do: 0
-  defp promedio(lista), do: Enum.sum(lista) / length(lista)
+  defp promedio(lista), do
+    Enum.map(lista,)
+  end
 
   defp estudiantes_por_encima_del_promedio(lista, promedio) do
     Enum.filter(lista, fn nota -> nota > promedio end)

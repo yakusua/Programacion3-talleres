@@ -105,6 +105,8 @@ defmodule Aereolinea do
 
     filtrar_vuelos_disponibles(vuelos)
       |> IO.puts()
+    pasajeros_totales_por_aereolinea(vuelos)
+      |> IO.puts()
 
   end
 
@@ -117,6 +119,15 @@ defmodule Aereolinea do
         |> Enum.filter( fn %{disponible: disponible} -> disponible end)
         |> Enum.map(fn %{codigo: codigo} -> codigo end)
         |> Enum.sort()
+  end
+
+  @doc"""
+  Agrupa los vuelos por aerolínea y calcula cuántos pasajeros en total lleva cada una (sumando todos sus vuelos, disponibles o no).
+  """
+  def pasajeros_totales_por_aereolinea (lista) do
+      lista
+
+
   end
 end
 Aereolinea.main()

@@ -1,11 +1,12 @@
-"""
+
+
+defmodule EnviosMessage do
+@doc"""
 Ejercicio 1
 Una empresa de envíos ha desarrollado un sistema para registrar paquetes. El encargado desea que, al iniciar el sistema, se solicite al usuario su nombre, el nombre del destinatario y la dirección de entrega. Con esa información, el sistema debe mostrar un único mensaje concatenado que confirme el registro, por ejemplo:
 "El paquete a nombre de Carlos quedó registrado para ser entregado a Pedro en la dirección Calle 123, Bogotá."
 
 """
-
-defmodule EnviosMessage do
   def main do
     nombre = "ingrese su nombre "
     |> Util.ingresar(:text)

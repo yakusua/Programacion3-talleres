@@ -23,6 +23,7 @@ defmodule EntradaReales do
   defp calcular_valor_final(valor_producto, valor_descuento) do
     valor_producto - valor_descuento
   end
+
   defp generar_mensaje(valor_descuento, valor_final) do
     valor_descuento = valor_descuento
     |> Float.round(1)

@@ -11,15 +11,7 @@ Si tiene menos de 5 caracteres: "Nombre de usuario muy corto, debe tener al meno
 Tenga en cuenta lo siguiente:
 Use la estructura if/else para decidir el mensaje a mostrar.
 Separe la lógica en funciones pequeñas y documente el módulo.
-Ejercicio 4
-En la guía anterior se vio que un programa útil debe tener efectos secundarios, pero que conviene minimizarlos y aislarlos. La siguiente función no cumple ese principio, porque mezcla el cálculo con la escritura en consola:
-def convertir_temperatura(celsius) do
-  resultado = celsius * 9 / 5 + 32
-  IO.puts("La temperatura en Fahrenheit es: resultado")
-end
 
-Reescríbala dentro de un módulo, separándola en dos funciones: una completamente pura, que solo haga la conversión y devuelva el resultado, y otra que se encargue únicamente de imprimirlo. Agregue una función main que las coordine.
-Responda: ¿cuál de las dos funciones podría probar automáticamente sin necesidad de leer la consola? Relacione su respuesta con la buena práctica de delegar responsabilidades a funciones pequeñas vista en esta guía.
 
 """
 

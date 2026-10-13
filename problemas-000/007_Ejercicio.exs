@@ -45,6 +45,20 @@ defmodule Descuentos do
 
   end
 
+  def obtener_descuento(precio) when precio <= 50000 do
+    precio
+  end
+  def obtener_descuento(precio) when  precio >= 50000  do
+    precio * 5/100
+  end
+  def obtener_descuento(precio) when precio >= 100000  do
+    precio * 10/100
+  end
+  def obtener_descuento(precio) whenprecio >= 500000 do
+    precio * 15/100
+  end
+
+
 end
 
 Descuentos.main()
