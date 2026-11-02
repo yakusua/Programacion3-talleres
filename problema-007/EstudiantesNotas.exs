@@ -22,8 +22,7 @@ defmodule Ventas do
   end
 
   #obtener la lista de productos que pertenecen a una categoria especifica
-  defp filtrar_categoria (lista,categoria), do : Enum.filter(lista,&(&1.categoria == categoria)) end
-
+  defp filtrar_categoria(lista, categoria), do: Enum.filter(lista, &(&1.categoria == categoria))
 
   #obtener los nombres de los productos
   defp obtener_nombre (ventas) do
@@ -33,9 +32,23 @@ defmodule Ventas do
   defp categorias (ventas) do
     ventas
     |> Enum.map(&(1&.categoria))
-    |> Enum.uniq
+    |> Enum.uniq()
   end
-  defp agrupar_productos_por_categoria(venta), do: Enum.grup_by(&(1.producto))
+  defp agrupar_productos_por_categoria(ventas) do
+    Enum.group_by(ventas, &(&1.categoria))
+  end
+  defp ventas_por_categoria(ventas) do
+    Enum.group_by(ventas, fn venta -> venta.categoria end, fn venta -> venta.cantidad end)
+    |> Enum.map(fn {categoria, cantidades} -> {categoria, Enum.sum(cantidades)} end)
+  end
+
+  defp sumar_unidades_por_categoria(ventas) do
+    ventas
+    |> agrupar_productos_por_categoria()
+    |> Map.new(fn {categoria, productos} ->
+    %{categoria, Enum.sum(Enum.map(productos, &(&1.cantidad)))}
+      end )
+  end
 end
 
 EntradaReales.main()
